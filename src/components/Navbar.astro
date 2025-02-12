@@ -2,7 +2,9 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<nav class="flex items-center justify-between py-4 px-4 border-b-2 border-gray-200">
+<nav
+  class="flex items-center justify-between py-4 px-4 border-b-2 border-gray-200"
+>
   <div class="flex items-center">
     <Icon name="mdi:terminal" class="h-8 w-8 mr-4" />
     <!-- Mobile menu button -->
@@ -71,9 +73,6 @@ import { Icon } from "astro-icon/components";
   </div>
 </div>
 
-
-
-
 <script>
   // Theme toggle script
   const theme = (() => {
@@ -87,12 +86,12 @@ import { Icon } from "astro-icon/components";
   })();
 
   // Apply initial theme
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-    document.body.classList.remove("bg-[#0B0F1A]", "text-white");
-  } else {
+  if (theme === "dark") {
     document.documentElement.classList.add("dark");
     document.body.classList.add("bg-[#0B0F1A]", "text-white");
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.body.classList.remove("bg-[#0B0F1A]", "text-white");
   }
 
   localStorage.setItem("theme", theme);
@@ -109,7 +108,7 @@ import { Icon } from "astro-icon/components";
     // Update icons
     const sunIcon = document.querySelector('[data-icon="mdi:brightness-7"]');
     const moonIcon = document.querySelector(".moon");
-    
+
     if (sunIcon && moonIcon) {
       sunIcon.classList.toggle("hidden");
       moonIcon.classList.toggle("hidden");
