@@ -10,7 +10,7 @@
             class="space-y-6"
             method="POST"
             enctype="multipart/form-data"
-            onsubmit="return handleSubmit(event)"
+            id="contactForm"
         >
             <div>
                 <label for="name" class="block text-sm font-medium text-gray-700">Name<span class="text-red-700">*</span></label>
@@ -37,6 +37,18 @@
             </div>
 
             <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700">Subject<span class="text-red-700">*</span></label>
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    placeholder="Message Subject"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                />
+            </div>
+
+            <div>
                 <label for="message" class="block text-sm font-medium text-gray-700">Message<span class="text-red-700">*</span></label>
                 <textarea
                     id="message"
@@ -48,12 +60,10 @@
                 ></textarea>
             </div>
 
-            
-
             <div>
                 <button
                     type="submit"
-                    class="w-full flex justify-center mt-22 cursor-pointer py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="w-full flex justify-center  cursor-pointer py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                     Send Message
                 </button>
@@ -62,33 +72,42 @@
     </div>
 </section>
 
-<script>
-interface FormData {
-    name: string;
-    email: string;
-    message: string;
-    attachment?: File;
-}
+<script  type="text/javascript" is:inline  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-function handleSubmit(event: SubmitEvent) {
-    event.preventDefault();
-    
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    
-    // Handle form submission here
-    // You can add your form submission logic, API calls, etc.
-    
-    console.log({
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-        attachment: formData.get('attachment')
+<script is:inline  type="text/javascript">
+    // Initialize EmailJS
+    emailjs.init("vcBKmfWyOpHUY2xMB");
+
+    // Add event listener
+    document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        const templateParams = {
+            from_name: formData.get('name'),
+            from_email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const response = await emailjs.send(
+                'service_qjy0rfo',
+                'template_r1muuyu',
+                templateParams
+            );
+
+            if (response.status === 200) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('Failed to send message. Please try again.');
+        }
     });
-    
-    // Reset form after submission
-    form.reset();
-    
-    return false;
-}
 </script>
