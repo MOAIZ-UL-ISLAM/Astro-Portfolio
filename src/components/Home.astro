@@ -1,38 +1,39 @@
 ---
-// Import Astro Icons
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="h-[83vh] flex items-center">
+<div class="h-[83vh] flex items-center py-8 px-4">
   <div class="container mx-auto">
-    <div class="mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-2">Moaiz Ul Islam</h1>
+    <div class=" mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+        Moaiz Ul Islam
+      </h1>
 
-      <p class="text-base md:text-lg text-gray-600 mb-16">
+      <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-8 md:mb-16 leading-relaxed">
         Passionate full-stack developer crafting innovative web solutions with
-        modern technologies. <br />
+        modern technologies. <br class="hidden sm:block" />
         Focused on creating seamless user experiences and scalable applications.
       </p>
 
       <div>
-        <h2 class="text-xl md:text-xl font-bold mb-4">Skills</h2>
-        <div class="flex flex-wrap gap-4 md:gap-6 mb-8">
-          <Icon name="logos:react"  class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
-          <Icon name="logos:nextjs-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer " />
-          <Icon name="logos:typescript-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
-          <Icon name="logos:nodejs-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
-          <Icon name="logos:tailwindcss-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
+        <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-4">Skills</h2>
+        <div class="flex flex-wrap gap-3 sm:gap-4 md:gap-6 mb-8">
+          <Icon name="logos:react" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 cursor-pointer hover:scale-110 transition-transform" />
+          <Icon name="logos:nextjs-icon" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 cursor-pointer hover:scale-110 transition-transform" />
+          <Icon name="logos:typescript-icon" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 cursor-pointer hover:scale-110 transition-transform" />
+          <Icon name="logos:nodejs-icon" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 cursor-pointer hover:scale-110 transition-transform" />
+          <Icon name="logos:tailwindcss-icon" class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 cursor-pointer hover:scale-110 transition-transform" />
         </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 mt-22">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <button
-          class="w-full cursor-pointer sm:w-auto bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
+          class="w-full sm:w-auto bg-blue-600 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm sm:text-base"
         >
           Contact Me
         </button>
         <button
-          class="w-full cursor-pointer sm:w-auto border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-50 transition-colors"
+          class="w-full sm:w-auto border-2 border-blue-600 text-blue-600 px-4 sm:px-6 py-2 rounded-md hover:bg-blue-50 transition-colors text-sm sm:text-base"
         >
           View Projects
         </button>
