@@ -1,0 +1,42 @@
+---
+// Import Astro Icons
+import { Icon } from "astro-icon/components";
+---
+
+<div class="h-[83vh] flex items-center">
+  <div class="container mx-auto">
+    <div class="mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-2">Moaiz Ul Islam</h1>
+
+      <p class="text-base md:text-lg text-gray-600 mb-16">
+        Passionate full-stack developer crafting innovative web solutions with
+        modern technologies. <br />
+        Focused on creating seamless user experiences and scalable applications.
+      </p>
+
+      <div>
+        <h2 class="text-xl md:text-xl font-bold mb-4">Skills</h2>
+        <div class="flex flex-wrap gap-4 md:gap-6 mb-8">
+          <Icon name="logos:react"  class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
+          <Icon name="logos:nextjs-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer " />
+          <Icon name="logos:typescript-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
+          <Icon name="logos:nodejs-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
+          <Icon name="logos:tailwindcss-icon" class="w-6 h-6 md:w-8 md:h-8 cursor-pointer" />
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 mt-22">
+        <button
+          class="w-full cursor-pointer sm:w-auto bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Contact Me
+        </button>
+        <button
+          class="w-full cursor-pointer sm:w-auto border-2 border-blue-600 text-blue-600 px-6 py-2 rounded-md hover:bg-blue-50 transition-colors"
+        >
+          View Projects
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
