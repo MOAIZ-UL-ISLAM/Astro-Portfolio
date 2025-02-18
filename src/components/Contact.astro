@@ -1,113 +1,143 @@
 ---
 // Contact.astro
+import Swal from "sweetalert2";
 ---
 
 <section class="h-[83vh] container mx-auto py-12 px-4 md:px-8">
-    <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
-        
-        <form 
-            class="space-y-6"
-            method="POST"
-            enctype="multipart/form-data"
-            id="contactForm"
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+
+    <form
+      class="space-y-6"
+      method="POST"
+      enctype="multipart/form-data"
+      id="contactForm"
+    >
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700"
+          >Name<span class="text-red-700">*</span></label
         >
-            <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Name<span class="text-red-700">*</span></label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="John Doe"
-                    required
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-            </div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="John Doe"
+          required
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
 
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email<span class="text-red-700">*</span></label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="someone@xyz.com"
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-            </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700"
+          >Email<span class="text-red-700">*</span></label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="someone@xyz.com"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
 
-            <div>
-                <label for="subject" class="block text-sm font-medium text-gray-700">Subject<span class="text-red-700">*</span></label>
-                <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    placeholder="Message Subject"
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                />
-            </div>
+      <div>
+        <label for="subject" class="block text-sm font-medium text-gray-700"
+          >Subject<span class="text-red-700">*</span></label
+        >
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          required
+          placeholder="Message Subject"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
 
-            <div>
-                <label for="message" class="block text-sm font-medium text-gray-700">Message<span class="text-red-700">*</span></label>
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    required
-                    placeholder="Your message here..."
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                ></textarea>
-            </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700"
+          >Message<span class="text-red-700">*</span></label
+        >
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          required
+          placeholder="Your message here..."
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        ></textarea>
+      </div>
 
-            <div>
-                <button
-                    type="submit"
-                    class="w-full flex justify-center  cursor-pointer py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Send Message
-                </button>
-            </div>
-        </form>
-    </div>
+      <div>
+        <button
+          type="submit"
+          class="w-full flex justify-center cursor-pointer py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
+  </div>
 </section>
 
-<script  type="text/javascript" is:inline  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script
+  type="text/javascript"
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+<script is="client" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script is:inline type="text/javascript">
+  // Initialize EmailJS
+  emailjs.init("vcBKmfWyOpHUY2xMB");
 
-<script is:inline  type="text/javascript">
-    // Initialize EmailJS
-    emailjs.init("vcBKmfWyOpHUY2xMB");
+  // Add event listener
+  document
+    .getElementById("contactForm")
+    ?.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    // Add event listener
-    document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
-        e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
 
-        const form = e.target;
-        const formData = new FormData(form);
+      const templateParams = {
+        from_name: formData.get("name"),
+        from_email: formData.get("email"),
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+      };
 
-        const templateParams = {
-            from_name: formData.get('name'),
-            from_email: formData.get('email'),
-            subject: formData.get('subject'),
-            message: formData.get('message'),
-        };
+      try {
+        Swal.fire({
+          title: "Sending...",
+          didOpen: () => {
+            Swal.showLoading();
+          },
+          allowOutsideClick: false,
+        });
+        const response = await emailjs.send(
+          "service_qjy0rfo",
+          "template_r1muuyu",
+          templateParams
+        );
 
-        try {
-            const response = await emailjs.send(
-                'service_qjy0rfo',
-                'template_r1muuyu',
-                templateParams
-            );
-
-            if (response.status === 200) {
-                alert('Message sent successfully!');
-                form.reset();
-            } else {
-                throw new Error('Failed to send message');
-            }
-        } catch (error) {
-            console.error('Error sending email:', error);
-            alert('Failed to send message. Please try again.');
+        if (response.status === 200) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Your message has been sent successfully.",
+          });
+          form.reset();
+        } else {
+          throw new Error("Failed to send message");
         }
+      } catch (error) {
+        console.error("Error sending email:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Failed to send message. Please try again.",
+        });
+      }
     });
 </script>
