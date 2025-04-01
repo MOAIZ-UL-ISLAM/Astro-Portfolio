@@ -48,14 +48,20 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
   <div class="flex items-center space-x-4">
-    <button class="hover:text-gray-700">
-      <Icon name="mdi:search" class="h-6 w-6 cursor-pointer" />
+    <button class="hover:text-gray-700 flex gap-2">
+      <Icon name="mdi:search" class="h-6 w-6 cursor-pointer" /> 
     </button>
     
     <button id="themeToggle" class="hover:text-gray-700">
       <Icon name="mdi:white-balance-sunny" class="sun h-6 w-6 cursor-pointer" />
       <Icon name="mdi:moon-waning-crescent" class="moon h-6 w-6 cursor-pointer hidden" />
     </button>
+    <a href='https://www.dropbox.com/scl/fi/4ywud4xufkr3apa3csukt/moaiz_cv.pdf?rlkey=qyc0l7vrzms84qfspswrjd1pg&st=5kighdvv&dl=0' download title="Download CV" class='flex' target="_blank">
+      <Icon name='mdi:file-download' class="h-6 w-6 cursor-pointer" />
+      <span class='text-[7px]'>
+        Download Cv
+      </span>
+    </a>
 
   </div>
 </nav>
