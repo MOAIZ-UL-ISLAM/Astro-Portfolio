@@ -7,9 +7,11 @@ const currentPath = Astro.url.pathname;
   class="flex items-center justify-between py-4 px-4 border-b-2 border-gray-200"
 >
   <div class="flex items-center">
-    <Icon name="mdi:terminal" class="h-8 w-8 mr-4" />
+    <a href="/" class="flex items-center text-2xl font-bold text-gray-900">
+      <Icon name="mdi:terminal" class="h-8 w-8 mr-4 cursor-pointer" />
+    </a>
     <!-- Mobile menu button -->
-    <button id="menuButton" class="md:hidden">
+    <button id="menuButton" class="md:hidden cursor-pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -47,12 +49,12 @@ const currentPath = Astro.url.pathname;
   </div>
   <div class="flex items-center space-x-4">
     <button class="hover:text-gray-700">
-      <Icon name="mdi:search" class="h-6 w-6" />
+      <Icon name="mdi:search" class="h-6 w-6 cursor-pointer" />
     </button>
     
     <button id="themeToggle" class="hover:text-gray-700">
-      <Icon name="mdi:white-balance-sunny" class="sun h-6 w-6" />
-      <Icon name="mdi:moon-waning-crescent" class="moon h-6 w-6 hidden" />
+      <Icon name="mdi:white-balance-sunny" class="sun h-6 w-6 cursor-pointer" />
+      <Icon name="mdi:moon-waning-crescent" class="moon h-6 w-6 cursor-pointer hidden" />
     </button>
 
   </div>
