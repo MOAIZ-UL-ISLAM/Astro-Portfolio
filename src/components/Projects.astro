@@ -21,16 +21,15 @@ const projects: Project[] = [
     imageUrl: Dashboard,
     tags: ["React", "TypeScript", "Tailwind"],
     demoUrl: 'https://thunderous-crepe-72ab6b.netlify.app/',
-    repoUrl: "https://github.com/username/repo1",
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/Dashboard_React_App",
     featured: true
   },
   {
     title: "Fitness App",
     description: "A react-native fitness app that helps users to show different exercises & track calories.",
     imageUrl: FitnessApp,
-    tags: ["React-Native", "Firebase"],
-    demoUrl: 'https://thunderous-crepe-72ab6b.netlify.app/',
-    repoUrl: "https://github.com/username/repo1",
+    tags: ["React-Native", "Firebase","Expo"],
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/Fitness-app-reactNative",
     featured: true
   },
  
@@ -41,7 +40,7 @@ const projects: Project[] = [
   <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Projects</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     {projects.map((project) => (
-      <article class=" rounded-lg overflow-hidden shadow-lg ">
+      <article class=" rounded-lg overflow-hidden shadow-lg border-gray-600 border-2">
         {/* Project Image or Placeholder */}
         <div class="relative aspect-video w-full overflow-hidden  ">
           {project.imageUrl ? (
