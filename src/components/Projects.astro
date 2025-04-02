@@ -41,9 +41,9 @@ const projects: Project[] = [
   <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Projects</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     {projects.map((project) => (
-      <article class="bg-white rounded-lg overflow-hidden shadow-lg">
+      <article class=" rounded-lg overflow-hidden shadow-lg ">
         {/* Project Image or Placeholder */}
-        <div class="relative aspect-video w-full overflow-hidden bg-slate-100 ">
+        <div class="relative aspect-video w-full overflow-hidden  ">
           {project.imageUrl ? (
             <Image 
               src={project.imageUrl} 
@@ -61,13 +61,13 @@ const projects: Project[] = [
 
         {/* Project Info */}
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 dark:text-slate-900">{project.title}</h3>
-          <p class="text-slate-800 dark:text-slate-800 mb-4">{project.description}</p>
+          <h3 class="text-xl font-semibold mb-2 ">{project.title}</h3>
+          <p class=" mb-4">{project.description}</p>
 
           {/* Tags */}
           <div class="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag) => (
-              <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-md text-sm">
+              <span class="px-2 py-1 bg-slate-900 text-white  rounded-md text-sm">
                 {tag}
               </span>
             ))}
