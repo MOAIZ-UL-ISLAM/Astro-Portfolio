@@ -3,6 +3,8 @@ import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import Dashboard from '../assets/react-dashboard.png';
 import FitnessApp from '../assets/native-app.png';
+import Kanban from '../assets/kanban.jpg';
+import Ajkpsc from '../assets/Ajkpsc.png';
 
 interface Project {
   title: string;
@@ -21,29 +23,65 @@ const projects: Project[] = [
     imageUrl: Dashboard,
     tags: ["React", "TypeScript", "Tailwind"],
     demoUrl: 'https://thunderous-crepe-72ab6b.netlify.app/',
-    repoUrl: "https://github.com/username/repo1",
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/Dashboard_React_App",
     featured: true
   },
   {
     title: "Fitness App",
     description: "A react-native fitness app that helps users to show different exercises & track calories.",
     imageUrl: FitnessApp,
-    tags: ["React-Native", "Firebase"],
-    demoUrl: 'https://thunderous-crepe-72ab6b.netlify.app/',
-    repoUrl: "https://github.com/username/repo1",
+    tags: ["React-Native", "Firebase","Expo"],
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/Fitness-app-reactNative",
     featured: true
   },
+  {
+    title: "Kanban Board",
+    description: "A kanban board for task management built with Nextjs.",
+    imageUrl: Kanban,
+    tags: ["Nextjs", "Ts", "Tailwind"],
+    demoUrl: 'https://kanban-moaiz.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/kanban-TodoApp",
+    featured: true
+  },
+  {
+    title: "Ajk-Psc website",
+    description: "A website for Ajk-Psc, a local organization, built with Astro-Js.",
+    imageUrl: Ajkpsc,
+    tags: ["AstroJs", "Ts", "Tailwind"],
+    demoUrl: 'https://ajkpsc.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/ajkpsc-site",
+    featured: true
+  },
+  {
+    title: "Job Application Platform Mern",
+    description: "A website for Ajk-Psc, a local organization, built with Astro-Js.",
+    // imageUrl: Ajkpsc,
+    tags: ["NextJs", "MongoDB", "Express", "NodeJs", "Tailwind" ,"redux-toolkit"],
+    // demoUrl: 'https://ajkpsc.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/ajkPSC",
+    featured: true
+  },
+  {
+    title: "Plenaty of Hobby and personal projects",
+    description: "have a look at my githib profile",
+    // imageUrl: Ajkpsc,
+    tags: ["Mern","Django","React native",],
+    // demoUrl: 'https://ajkpsc.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM",
+    // featured: true
+  },
+
  
 ];
 ---
 
-<section class="py-16 sm:py-20">
+<section class="py-16 sm:py-20 m-4">
   <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Projects</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     {projects.map((project) => (
-      <article class="bg-white rounded-lg overflow-hidden shadow-lg">
+      <article class=" rounded-lg overflow-hidden shadow-lg border-gray-600 border-2">
         {/* Project Image or Placeholder */}
-        <div class="relative aspect-video w-full overflow-hidden bg-slate-100 ">
+        <div class="relative aspect-video w-full overflow-hidden  ">
           {project.imageUrl ? (
             <Image 
               src={project.imageUrl} 
@@ -61,13 +99,13 @@ const projects: Project[] = [
 
         {/* Project Info */}
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 dark:text-slate-900">{project.title}</h3>
-          <p class="text-slate-800 dark:text-slate-800 mb-4">{project.description}</p>
+          <h3 class="text-xl font-semibold mb-2 ">{project.title}</h3>
+          <p class=" mb-4">{project.description}</p>
 
           {/* Tags */}
           <div class="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag) => (
-              <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-md text-sm">
+              <span class="px-2 py-1 bg-slate-900 text-white  rounded-md text-sm">
                 {tag}
               </span>
             ))}
