@@ -27,20 +27,29 @@ const projects: Project[] = [
     featured: true
   },
   {
+    title: "Django Blog App",
+    description: "A full stack blog  CRUD app with djnago built-in Authentication module.",
+    // imageUrl: Ajkpsc,
+    tags: ["Django","HTML","CSS"],
+    // demoUrl: 'https://ajkpsc.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/django-blogApp",
+    // featured: true
+  },
+  {
+    title: "Job Application Platform Mern",
+    description: "A website for Ajk-Psc, a local organization, built with Astro-Js.",
+    // imageUrl: Ajkpsc,
+    tags: ["NextJs", "MongoDB", "Express", "NodeJs", "Tailwind" ,"redux-toolkit"],
+    // demoUrl: 'https://ajkpsc.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/ajkPSC",
+    featured: true
+  },
+  {
     title: "Fitness App",
     description: "A react-native fitness app that helps users to show different exercises & track calories.",
     imageUrl: FitnessApp,
     tags: ["React-Native", "Firebase","Expo"],
     repoUrl: "https://github.com/MOAIZ-UL-ISLAM/Fitness-app-reactNative",
-    featured: true
-  },
-  {
-    title: "Kanban Board",
-    description: "A kanban board for task management built with Nextjs.",
-    imageUrl: Kanban,
-    tags: ["Nextjs", "Ts", "Tailwind"],
-    demoUrl: 'https://kanban-moaiz.vercel.app/',
-    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/kanban-TodoApp",
     featured: true
   },
   {
@@ -53,16 +62,25 @@ const projects: Project[] = [
     featured: true
   },
   {
-    title: "Job Application Platform Mern",
-    description: "A website for Ajk-Psc, a local organization, built with Astro-Js.",
-    // imageUrl: Ajkpsc,
-    tags: ["NextJs", "MongoDB", "Express", "NodeJs", "Tailwind" ,"redux-toolkit"],
-    // demoUrl: 'https://ajkpsc.vercel.app/',
-    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/ajkPSC",
+    title: "Kanban Board",
+    description: "A kanban board for task management built with Nextjs.",
+    imageUrl: Kanban,
+    tags: ["Nextjs", "Ts", "Tailwind"],
+    demoUrl: 'https://kanban-moaiz.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/kanban-TodoApp",
     featured: true
   },
   {
-    title: "Plenaty of Hobby and personal projects",
+    title: "Todo App",
+    description: "Todo App with auth module",
+    // imageUrl: Ajkpsc,
+    tags: ["Django","Html","CSS"],
+    // demoUrl: 'https://ajkpsc.vercel.app/',
+    repoUrl: "https://github.com/MOAIZ-UL-ISLAM/todo-app-django/tree/master",
+    // featured: true
+  },
+  {
+    title: "Plenaty of Hobby,Freelance and Personal Projects",
     description: "have a look at my githib profile",
     // imageUrl: Ajkpsc,
     tags: ["Mern","Django","React native",],
@@ -70,18 +88,16 @@ const projects: Project[] = [
     repoUrl: "https://github.com/MOAIZ-UL-ISLAM",
     // featured: true
   },
-
- 
 ];
 ---
 
-<section class="py-16 sm:py-20 m-4">
-  <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Projects</h2>
+<section class="py-12 sm:py-8 m-4">
+  <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Projects</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     {projects.map((project) => (
       <article class=" rounded-lg overflow-hidden shadow-lg border-gray-600 border-2">
         {/* Project Image or Placeholder */}
-        <div class="relative aspect-video w-full overflow-hidden  ">
+        <div class="relative aspect-video w-full overflow-hidden border-b-2  ">
           {project.imageUrl ? (
             <Image 
               src={project.imageUrl} 
@@ -91,8 +107,8 @@ const projects: Project[] = [
               class="w-full h-full object-cover"
             />
           ) : (
-            <div class="w-full h-full flex items-center justify-center">
-              <Icon name="mdi:layers-triple" class="w-16 h-16 text-slate-300" />
+            <div class="w-full h-full flex items-center justify-center border-b-2">
+              <Icon name="mdi:layers-triple" class="w-16 h-16 text-slate-300 " />
             </div>
           )}
         </div>
